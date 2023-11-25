@@ -218,7 +218,8 @@
 
     for(i of music.keys()) {
       if(music[i].song.paused == false) {
-        image.style.animationPlayState = 'running'
+        play.classList.add('active');
+        image.style.animationPlayState = 'running';
         musicRange.max = music[i].song.duration;
         music[i].song.addEventListener('timeupdate',(e)=>{  
           currentTimer.textContent = formatTime(e.currentTarget.currentTime);
@@ -424,6 +425,7 @@
         musicRange.value = 0;
         play.classList.replace('fa-circle-pause' , 'fa-circle-play');
         play.classList.remove('active');
+        image.style.animationPlayState = 'paused';
       }
     }
   })
