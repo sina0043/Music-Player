@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --slider-width: 200px;
+  --slider-height: 5px;
+  --slider-color: aquamarine;
+}
+
+body {
+  height: 100vh;
+}
+
+.box {
+  background-image: url(./img/concept-eternal-theme-about-eternity-music-musical-instruments-good-mood-ascended-aspiration-action-treble-clef-sheet-music_771426-4115.avif);
+  background-size: auto;
+  background-position: right;
+  max-height: 433px;
+  min-height: 433px;
+}
+
+@media screen and (min-width: 400px) {
+  .box {
+    width: 350px !important;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+}
+
+.album {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.album img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.head i:hover,
+.album li:hover .play,
+.option i:hover {
+  cursor: pointer;
+  color: var(--slider-color);
+}
+
+.album li:hover {
+  cursor: pointer;
+  background-color: #ededed52;
+  transition: all 0.5s;
+}
+
+.option .play-music {
+  font-size: 35px;
+  color: coral;
+}
+
+.head i.active,
+.album li.active .play,
+.option i.active {
+  color: #28a745;
+}
+
+.animate img {
+  width: 150px;
+  height: 150px;
+  box-shadow: 0px 0px 20px -5px #2980b9;
+  animation: glow .5s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+
+@keyframes glow {
+  from {
+      box-shadow: 0px 0px 20px -5px #2980b9;
+  }
+  to {
+      box-shadow: 0px 0px 20px 5px #2980b9;
+  }
+}
+
+input[type="range"] {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="range"] {
+    width: var(--slider-width);
+    -webkit-appearance: none;
+    background-color: #353535;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: var(--slider-height);
+    -webkit-appearance: none;
+    color: var(--slider-color);
+    margin-top: -1px;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    width: 0px;
+    -webkit-appearance: none;
+    height: var(--slider-height);
+    box-shadow: calc(-1 * var(--slider-width)) 0 0 var(--slider-width)
+      var(--slider-color);
+  }
+}
+
+/* FF */
+input[type="range"]::-moz-range-progress {
+  background-color: var(--slider-color);
+}
+input[type="range"]::-moz-range-thumb {
+  height: var(--slider-height);
+  width: 0;
+  border: none;
+  box-shadow: calc(-1 * var(--slider-width)) 0 0 var(--slider-width)
+    var(--slider-color);
+  box-sizing: border-box;
+}
+
+/* IE */
+input[type="range"]::-ms-fill-lower {
+  background-color: var(--slider-color);
+}
+input[type="range"]::-ms-fill-upper {
+  background-color: var(--slider-color);
+}
+
+.volume input[type="range"] {
+  width: 70px;
+  rotate: -90deg;
+  right: -50px;
+  bottom: 40px;
+}
