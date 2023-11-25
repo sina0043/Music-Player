@@ -2,6 +2,7 @@
   "use strict";
   let head = document.querySelector(".head"), 
     body = document.body,
+    box = document.querySelector('.box'),
     output = document.querySelector('.output'),
     i,
     Index,
@@ -71,6 +72,7 @@
   });
 
   head.querySelectorAll('i')[0].addEventListener('click' , ()=>{
+    box.style.backgroundImage = 'url(./img/concept-eternal-theme-about-eternity-music-musical-instruments-good-mood-ascended-aspiration-action-treble-clef-sheet-music_771426-4115.avif)';
     output.innerHTML=`
       <ul class="album mt-4 ml-n5"></ul>
     `
@@ -145,6 +147,8 @@
   })
 
   head.querySelectorAll('i')[1].addEventListener('click' , ()=>{
+    box.style.backgroundImage = 'none';
+    box.style.backgroundColor = 'black';
     output.innerHTML=`
       <div class="animate d-flex align-items-center justify-content-center my-5">
         <img src="./img/images.jpg" alt="" class="rounded-circle">
