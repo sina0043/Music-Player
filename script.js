@@ -222,6 +222,7 @@
 
     for(i of music.keys()) {
       if(music[i].song.paused == false) {
+        currentMusic = i;
         play.classList.add('active');
         image.style.animationPlayState = 'running';
         musicRange.max = music[i].song.duration;
