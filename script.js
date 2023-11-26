@@ -20,7 +20,7 @@
       id: 1,
       name: 'music 2',
       song: new Audio('./song/2.mp3'),
-      image: './img/images2.jpg'
+      image: './img/phone-with-music-icon-headphones-blurred-background-music-listening-concept-copy-space_169016-14360.avif'
     },
     {
       id: 2,
