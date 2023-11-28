@@ -60,7 +60,7 @@
     },
   ]
 
-  body.addEventListener('load' , outputSet());
+  window.addEventListener('load' , outputSet());
 
   head.querySelectorAll("i").forEach((e1) => {
     e1.addEventListener("click", () => {
@@ -437,7 +437,7 @@
 
   function outputSet() {
     setTimeout(() => {
-      head.querySelectorAll('i')[0].click();
-    }, 1);
+      head.querySelectorAll('i')[1].click();
+    }, 100);
   }
 })();
