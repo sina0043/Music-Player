@@ -60,7 +60,7 @@
     },
   ]
 
-  window.addEventListener('load' , outputSet());
+  document.addEventListener('load' , outputSet());
 
   head.querySelectorAll("i").forEach((e1) => {
     e1.addEventListener("click", () => {
@@ -157,7 +157,7 @@
       <div class="d-flex justify-content-around align-items-center mt-3">
         <span class="current-timer align-self-center">0:00</span>
         <input class="music-range align-self-center" type="range" value="0">
-        <span class="total-timer align-self-center">${formatTime(music[0].song.duration)}</span>
+        <span class="total-timer align-self-center">1:30</span>
       </div>
       <div class="option d-flex justify-content-around align-items-center mt-3">
         <i class="auto-play active align-self-center fa-brands fa-autoprefixer" data-toggle="tooltip" title="Turn on auto-play next track"></i>
@@ -438,6 +438,6 @@
   function outputSet() {
     setTimeout(() => {
       head.querySelectorAll('i')[1].click();
-    }, 100);
+    }, 10);
   }
 })();
