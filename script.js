@@ -60,7 +60,18 @@
     },
   ]
 
-  document.addEventListener('load' , outputSet());
+  window.addEventListener('load' ,()=>{
+    head.querySelectorAll("i")[1].click();
+    volumeSet();
+  })
+
+  for(i of music.keys()) {
+    music[i].song.addEventListener('ended',()=>{
+      setTimeout(() => {
+        head.querySelectorAll("i")[0].click()
+      }, 100);
+    })
+  }
 
   head.querySelectorAll("i").forEach((e1) => {
     e1.addEventListener("click", () => {
@@ -435,9 +446,38 @@
     }
   })
 
-  function outputSet() {
-    setTimeout(() => {
-      head.querySelectorAll('i')[1].click();
-    }, 10);
+  function volumeSet() {
+    let volumeRange = document.querySelector(".volume").querySelector('input'),
+    volume = document.querySelector(".volume");
+
+    for(i of music.keys()) {
+      if(localStorage.getItem('volume') == null) {
+        music[i].song.volume = 1;
+        volumeRange.value = 100;
+      }else {
+        music[i].song.volume  = localStorage.getItem('volume') / 100;
+        volumeRange.value = localStorage.getItem('volume');
+      }
+    }  
+    
+    volume.querySelectorAll('i').forEach(e2=>{
+      if(!e2.classList.contains('d-none')){
+        e2.classList.add('d-none');
+      }
+
+      if(volumeRange.value == 0) {
+        if(e2.classList.contains('fa-volume-off')){
+          e2.classList.remove('d-none');
+        }
+      }else if(volumeRange.value > 0 && volumeRange.value < 70) {
+        if(e2.classList.contains('fa-volume-low')){
+          e2.classList.remove('d-none');
+        }
+      }else {
+        if(e2.classList.contains('fa-volume-high')){
+          e2.classList.remove('d-none');
+        }
+      }
+    })
   }
 })();
